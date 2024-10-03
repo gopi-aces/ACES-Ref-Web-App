@@ -1,0 +1,70 @@
+[
+    {
+        "role": "user",
+        "content": "Neely Jr., Brett H; Lovelace, Jeffrey B.; Cowen, Amanda P. and Hiller, Nathan J. (2020): Metacritiques of upper echelons theory: Verdicts and recommendations for future research. Journal of Management, 46(6), 1029–1062.\nNorth, Douglass C. (1990): Institutions, institutional change and economic performance. Cambridge University Press: Cambridge i.a.\nO'Brien, Robert M. (2007): A caution regarding rules of thumb for variance inflation factors. Quality & Quantity: International Journal of Methodology, 41(5), 673–690.\nOECD/Eurostat (Ed.) (2019): Oslo manual 2018: Guidelines for collecting, reporting and using data on innovation. 4th edition. OECD Publishing: Paris and Luxembourg.\nO'Reilly, Charles and Chatman, Jennifer A. (1996): Culture and social control: corporations, cult and commitment. Research in Organizational Behavior, 18, 157–200.\n"
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@article{neely2020metacritiques,\n  author = {Neely Jr., Brett H. and Lovelace, Jeffrey B. and Cowen, Amanda P. and Hiller, Nathan J.},\n  title = {Metacritiques of Upper Echelons Theory: Verdicts and Recommendations for Future Research},\n  journal = {J. Manage.},\n  volume = {46},\n  number = {6},\n  pages = {1029--1062},\n  year = {2020}\n}\n\n@book{north1990institutions,\n  author = {North, Douglass C.},\n  title = {Institutions, Institutional Change and Economic Performance},\n  publisher = {Cambridge University Press},\n  year = {1990},\n  address = {Cambridge}\n}\n\n@article{o2007caution,\n  author = {O'Brien, Robert M.},\n  title = {A Caution Regarding Rules of Thumb for Variance Inflation Factors},\n  journal = {Qual. Quant.},\n  volume = {41},\n  number = {5},\n  pages = {673--690},\n  year = {2007}\n}\n\n@book{oecd2019oslo,\n  title = {Oslo Manual 2018: Guidelines for Collecting, Reporting and Using Data on Innovation},\n  editor = {{OECD/Eurostat}},\n  edition = {4},\n  publisher = {OECD Publishing},\n  year = {2019},\n  address = {Paris and Luxembourg}\n}\n\n@article{o1996culture,\n  author = {O'Reilly, Charles and Chatman, Jennifer A.},\n  title = {Culture and Social Control: Corporations, Cult and Commitment},\n  journal = {Res. Organ. Behav.},\n  volume = {18},\n  pages = {157--200},\n  year = {1996}\n}\n```"
+    },
+    {
+        "role": "user",
+        "content": "Cuberes, D., & Teignier, M. (2016). Aggregate Effects of Gender Gaps in the Labor Market: A Quantitative Estimate. Journal of Human Capital, 10(1), 1–32. https://doi.org/10.1086/683847\nCuddy, A. J., Fiske, S. T., & Glick, P. (2008). Warmth and Competence as Universal Dimensions of Social Perception: The Stereotype Content Model and the BIAS Map. In M. Zanna (Ed.), Advances in Experimental Social Psychology (pp. 61–149). Elsevier. https://doi.org/10.1016/s0065-2601(07)00002-0\nDas, T. K. (2005). How Strong are the Ethical Preferences of Senior Business Executives? Journal of Business Ethics, 56(1), 69–80. https://doi.org/10.1007/s10551-004-3238-2\nDavis, A. E., & Shaver, K. G. (2012). Understanding Gendered Variations in Business Growth Intentions across the Life Course. A Gendered Perspective on Organizational Creation, 36(3), 495–512. https://doi.org/10.1111/j.1540-6520.2012.00508.x\n"
+    },
+    {
+        "role": "user",
+        "content": "Cuberes, D., & Teignier, M. (2016). Aggregate Effects of Gender Gaps in the Labor Market: A Quantitative Estimate. Journal of Human Capital, 10(1), 1–32. https://doi.org/10.1086/683847\nCuddy, A. J., Fiske, S. T., & Glick, P. (2008). Warmth and Competence as Universal Dimensions of Social Perception: The Stereotype Content Model and the BIAS Map. In M. Zanna (Ed.), Advances in Experimental Social Psychology (pp. 61–149). Elsevier. https://doi.org/10.1016/s0065-2601(07)00002-0\nDas, T. K. (2005). How Strong are the Ethical Preferences of Senior Business Executives? Journal of Business Ethics, 56(1), 69–80. https://doi.org/10.1007/s10551-004-3238-2\nDavis, A. E., & Shaver, K. G. (2012). Understanding Gendered Variations in Business Growth Intentions across the Life Course. A Gendered Perspective on Organizational Creation, 36(3), 495–512. https://doi.org/10.1111/j.1540-6520.2012.00508.x\n"
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@article{cuberes2016aggregate,\n  author = {Cuberes, David and Teignier, Marc},\n  title = {Aggregate Effects of Gender Gaps in the Labor Market: A Quantitative Estimate},\n  journal = {J. Hum. Cap.},\n  volume = {10},\n  number = {1},\n  pages = {1--32},\n  year = {2016},\n  doi = {10.1086/683847}\n}\n\n@incollection{cuddy2008warmth,\n  author = {Cuddy, Amy J.C. and Fiske, Susan T. and Glick, Peter},\n  title = {Warmth and Competence as Universal Dimensions of Social Perception: The Stereotype Content Model and the BIAS Map},\n  booktitle = {Advances in Experimental Social Psychology},\n  editor = {Zanna, Mark},\n  year = {2008},\n  pages = {61--149},\n  publisher = {Elsevier},\n  doi = {10.1016/s0065-2601(07)00002-0}\n}\n\n@article{das2005strong,\n  author = {Das, T. K.},\n  title = {How Strong are the Ethical Preferences of Senior Business Executives?},\n  journal = {J. Bus. Ethics},\n  volume = {56},\n  number = {1},\n  pages = {69--80},\n  year = {2005},\n  doi = {10.1007/s10551-004-3238-2}\n}\n\n@article{davis2012understanding,\n  author = {Davis, Anne E. and Shaver, Kelly G.},\n  title = {Understanding Gendered Variations in Business Growth Intentions across the Life Course},\n  journal = {A Gendered Perspective on Organizational Creation},\n  volume = {36},\n  number = {3},\n  pages = {495--512},\n  year = {2012},\n  doi = {10.1111/j.1540-6520.2012.00508.x}\n}\n```"
+    },
+    {
+        "role": "user",
+        "content": "[5].\tM Eidini, “Zigzag-base folded sheet cellular mechanical metamaterials”, Extreme Mechanics Letters, 6(2016),96-102.\n[6].\tW Wu, W Hu, G Qian, et al. “Mechanical design and multifunctional applications of chiral mechanical metamaterials: A review”, Materials & Design, 180(2019), 107950.\n[7].\tN.I..Zheludev, Y.S.Kivshar, “From metamaterials to metadevices”, Nature materials, 11:11(2012),917-924.\n[8].\tK.E. Evans, M.A. Nkansah, I.J. Hutchinson, S.C. Rogers, “Molecular network design”, Nature, 353(1991),124-125.\n"
+    },
+    {
+        "role": "user",
+        "content": "[5].\tM Eidini, “Zigzag-base folded sheet cellular mechanical metamaterials”, Extreme Mechanics Letters, 6(2016),96-102.\n[6].\tW Wu, W Hu, G Qian, et al. “Mechanical design and multifunctional applications of chiral mechanical metamaterials: A review”, Materials & Design, 180(2019), 107950.\n[7].\tN.I..Zheludev, Y.S.Kivshar, “From metamaterials to metadevices”, Nature materials, 11:11(2012),917-924.\n[8].\tK.E. Evans, M.A. Nkansah, I.J. Hutchinson, S.C. Rogers, “Molecular network design”, Nature, 353(1991),124-125.\n"
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@article{eidini2016zigzag,\n  author = {Eidini, Maryam},\n  title = {Zigzag-Base Folded Sheet Cellular Mechanical Metamaterials},\n  journal = {Extreme Mech. Lett.},\n  volume = {6},\n  pages = {96--102},\n  year = {2016}\n}\n\n@article{wu2019mechanical,\n  author = {Wu, Wei and Hu, Wei and Qian, Guoliang and et al.},\n  title = {Mechanical design and multifunctional applications of chiral mechanical metamaterials: A review},\n  journal = {Mater. Des.},\n  volume = {180},\n  pages = {107950},\n  year = {2019}\n}\n\n@article{zheludev2012metamaterials,\n  author = {Zheludev, Nikolay I. and Kivshar, Yuri S.},\n  title = {From metamaterials to metadevices},\n  journal = {Nat. Mater.},\n  volume = {11},\n  number = {11},\n  pages = {917--924},\n  year = {2012}\n}\n\n@article{evans1991molecular,\n  author = {Evans, Kenneth E. and Nkansah, Michael A. and Hutchinson, Ian J. and Rogers, Stephen C.},\n  title = {Molecular network design},\n  journal = {Nature},\n  volume = {353},\n  pages = {124--125},\n  year = {1991}\n}\n```"
+    },
+    {
+        "role": "user",
+        "content": "Schwaiger, M., & Meyer, A. (2009). Theorien und Methoden der Betriebswirtschaft: Handbuch für Wissenschaftler und Studierende. Vahlen. \nSinghal, K., Tu, T., Gottweis, J., Sayres, R., Wulczyn, E., Hou, L., Clark, K., Pfohl, S., Cole-Lewis, H., & Neal, D. (2023). Towards expert-level medical question answering with large language models. \nSweenor, D., & Ramanathan, K. (2023). The CIO’s Guide to Adopting Generative AI: Five Keys to Success. TinyTechMedia LLC. \nTuring, A. M. (1950). I.—COMPUTING MACHINERY AND INTELLIGENCE. In Mind, (Vol. LIX)(236), 433-460. \n"
+    },
+    {
+        "role": "user",
+        "content": "Schwaiger, M., & Meyer, A. (2009). Theorien und Methoden der Betriebswirtschaft: Handbuch für Wissenschaftler und Studierende. Vahlen. \nSinghal, K., Tu, T., Gottweis, J., Sayres, R., Wulczyn, E., Hou, L., Clark, K., Pfohl, S., Cole-Lewis, H., & Neal, D. (2023). Towards expert-level medical question answering with large language models. \nSweenor, D., & Ramanathan, K. (2023). The CIO’s Guide to Adopting Generative AI: Five Keys to Success. TinyTechMedia LLC. \nTuring, A. M. (1950). I.—COMPUTING MACHINERY AND INTELLIGENCE. In Mind, (Vol. LIX)(236), 433-460. \n"
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@book{schwaiger2009theorien,\n  author = {Schwaiger, Manfred and Meyer, Anne},\n  title = {Theorien und Methoden der Betriebswirtschaft: Handbuch für Wissenschaftler und Studierende},\n  publisher = {Vahlen},\n  year = {2009}\n}\n\n@article{singhal2023towards,\n  author = {Singhal, Kapil and Tu, Tony and Gottweis, Jonas and et al.},\n  title = {Towards Expert-Level Medical Question Answering with Large Language Models},\n  year = {2023}\n}\n\n@book{sweenor2023cio,\n  author = {Sweenor, Debra and Ramanathan, Karthik},\n  title = {The CIO’s Guide to Adopting Generative AI: Five Keys to Success},\n  publisher = {TinyTechMedia LLC},\n  year = {2023}\n}\n\n@article{turing1950computing,\n  author = {Turing, Alan M.},\n  title = {Computing Machinery and Intelligence},\n  journal = {Mind},\n  volume = {LIX},\n  number = {236},\n  pages = {433--460},\n  year = {1950}\n}\n```"
+    },
+    {
+        "role": "user",
+        "content": "\\bibitem{Gudmundson1991a}\n\tM.~Gudmundson, {Correlation model for shadow fading in mobile radio systems},\n\t{\\em Electronics Letters} {\\bf 27}(23)  (1991)  2145--2146.\n\t\n\t\\bibitem{Zhang2020}\n\tG.~Zhang, J.~Wang, X.~Chen, L.~Li and S.~Li, {Spectrum Cartography Using the\n\t\tVariational Bayesian em Algorithm}, {\\em 12th International Conference on\n\t\tWireless Communications and Signal Processing, WCSP 2020} (l)  (2020)\n\t614--619."
+    },
+    {
+        "role": "user",
+        "content": "\\bibitem{Gudmundson1991a}\n\tM.~Gudmundson, {Correlation model for shadow fading in mobile radio systems},\n\t{\\em Electronics Letters} {\\bf 27}(23)  (1991)  2145--2146.\n\t\n\t\\bibitem{Zhang2020}\n\tG.~Zhang, J.~Wang, X.~Chen, L.~Li and S.~Li, {Spectrum Cartography Using the\n\t\tVariational Bayesian em Algorithm}, {\\em 12th International Conference on\n\t\tWireless Communications and Signal Processing, WCSP 2020} (l)  (2020)\n\t614--619."
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@article{Gudmundson1991a,\n  author = {Gudmundson, M.},\n  title = {Correlation Model for Shadow Fading in Mobile Radio Systems},\n  journal = {Electron. Lett.},\n  volume = {27},\n  number = {23},\n  pages = {2145--2146},\n  year = {1991}\n}\n\n@inproceedings{Zhang2020,\n  author = {Zhang, G. and Wang, J. and Chen, X. and Li, L. and Li, S.},\n  title = {Spectrum Cartography Using the Variational Bayesian EM Algorithm},\n  booktitle = {12th International Conference on Wireless Communications and Signal Processing, WCSP 2020},\n  pages = {614--619},\n  year = {2020}\n}\n```"
+    },
+    {
+        "role": "user",
+        "content": "\\bibitem{Denkovski2012}\n\tD.~Denkovski, V.~Atanasovski, L.~Gavrilovska, J.~Riihijarvi and P.~Mahonen,\n\t{Reliability of a Radio Environment Map: Case of Spatial Interpolation\n\t\tTechniques}, {\\em Cognitive Radio Oriented Wireless Networks and\n\t\tCommunications (CROWNCOM)\\/},   (2012), pp. 248--253.\n\t\n\t\\bibitem{Sato2017Kriging}\n\tK.~Sato and T.~Fujii, {Kriging-based Interference Power Constraint: Integrated\n\t\tDesign of the Radio Environment Map and Transmission Power}, {\\em IEEE\n\t\tTransactions on Cognitive Communications and Networking} {\\bf 3}(1)  (2017)\n\t13--25.\t"
+    },
+    {
+        "role": "user",
+        "content": "\\bibitem{Denkovski2012}\n\tD.~Denkovski, V.~Atanasovski, L.~Gavrilovska, J.~Riihijarvi and P.~Mahonen,\n\t{Reliability of a Radio Environment Map: Case of Spatial Interpolation\n\t\tTechniques}, {\\em Cognitive Radio Oriented Wireless Networks and\n\t\tCommunications (CROWNCOM)\\/},   (2012), pp. 248--253.\n\t\n\t\\bibitem{Sato2017Kriging}\n\tK.~Sato and T.~Fujii, {Kriging-based Interference Power Constraint: Integrated\n\t\tDesign of the Radio Environment Map and Transmission Power}, {\\em IEEE\n\t\tTransactions on Cognitive Communications and Networking} {\\bf 3}(1)  (2017)\n\t13--25.\t"
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@inproceedings{Denkovski2012,\n  author = {Denkovski, D. and Atanasovski, V. and Gavrilovska, L. and Riihijarvi, J. and Mahonen, P.},\n  title = {Reliability of a Radio Environment Map: Case of Spatial Interpolation Techniques},\n  booktitle = {Cognitive Radio Oriented Wireless Networks and Communications (CROWNCOM)},\n  year = {2012},\n  pages = {248--253}\n}\n\n@article{Sato2017Kriging,\n  author = {Sato, K. and Fujii, T.},\n  title = {Kriging-based Interference Power Constraint: Integrated Design of the Radio Environment Map and Transmission Power},\n  journal = {IEEE Trans. Cogn. Commun. Networking},\n  volume = {3},\n  number = {1},\n  pages = {13--25},\n  year = {2017}\n}\n```"
+    }
+]

@@ -3,83 +3,59 @@ import os
 import subprocess
 from streamlit_ace import st_ace
 
-# Permanent directory for storing .bst, .tex, and .bib files
-perm_dir = r'D:\aces-ref-am'
-bst_folder = os.path.join(perm_dir, 'bst')
-
-# Ensure the permanent directory exists, create if it doesn't
-if not os.path.exists(perm_dir):
-    os.makedirs(perm_dir)
-if not os.path.exists(bst_folder):
-    os.makedirs(bst_folder)
-
-def download_bst_files():
-    # Logic to download .bst files into the 'bst' folder if needed.
-    pass  # Implement downloading logic if necessary
-
-# Download .bst files into the 'bst' folder if not already present
-download_bst_files()
-
 def generate_bbl_page():
-    st.title('ACES Reference Structure and Ordering')
+    st.title('BibTeX to BBL Converter')
 
-    # List available .bst files from the 'bst' folder
+    bst_folder = 'bst'
     if not os.path.exists(bst_folder):
-        st.error(f"Folder '{bst_folder}' not found. Please add .bst files.")
+        st.error(f"Folder '{bst_folder}' not found. Please create the folder and add .bst files.")
     else:
         bst_files = [f for f in os.listdir(bst_folder) if f.endswith('.bst')]
         if not bst_files:
-            st.error("No .bst files found in the 'bst' folder. Please add .bst files to proceed.")
+            st.error("No .bst files found in the 'bst' folder.")
         else:
             selected_bst = st.selectbox('Choose a .bst file', bst_files)
 
-            # Input area for .bib content using Ace Editor
-            bib_content = st_ace(language='latex', theme='github', height=300)
+            st.subheader('Paste your BibTeX content below:')
+            bib_content = st_ace(language='latex', theme='github', height=200)
 
-            if st.button('Generate .bbl File'):
+            if st.button('Generate .bbl'):
                 if bib_content:
+                    with open('temp.bib', 'w') as f:
+                        f.write(bib_content)
+
+                    tex_content = f"""
+                    \\documentclass{{article}}
+
+                    \\usepackage{{cite}}
+
+                    \\begin{{document}}
+
+                    pdflatex testbib.tex
+
+                    \\cite{{*}}
+                    \\bibliographystyle{{bst/{selected_bst}}}
+                    \\bibliography{{temp}}
+
+                    \\end{{document}}
+                    """
+
+                    with open('testbib.tex', 'w') as tex_file:
+                        tex_file.write(tex_content)
+
+                    pdflatex_command = ['pdflatex', 'testbib']
+                    bibtex_command = ['bibtex', 'testbib']
+
                     try:
-                        temp_bib_path = os.path.join(perm_dir, 'temp.bib')
-                        temp_tex_path = os.path.join(perm_dir, 'testbib.tex')
-                        bst_file_path = os.path.join(bst_folder, selected_bst)
+                        subprocess.run(pdflatex_command, check=True)
+                        subprocess.run(bibtex_command, check=True)
 
-                        # Save the .bib content
-                        with open(temp_bib_path, 'w') as f:
-                            f.write(bib_content)
+                        with open('testbib.bbl', 'r') as bbl_file:
+                            bbl_content = bbl_file.read()
 
-                        # Create the .tex file for processing the bibliography
-                        tex_content = f"""
-                        \\documentclass{{article}}
-                        \\usepackage{{cite}}
-                        \\begin{{document}}
-                        \\cite{{*}}
-                        \\bibliographystyle{{bst/{selected_bst}}}
-                        \\bibliography{{temp}}
-                        \\end{{document}}
-                        """
-
-                        with open(temp_tex_path, 'w') as f:
-                            f.write(tex_content)
-
-                        # Compile LaTeX and BibTeX to generate the .bbl file
-                        commands = [
-                            ['pdflatex', 'testbib'],
-                            ['bibtex', 'testbib']
-                        ]
-                        for cmd in commands:
-                            subprocess.run(cmd, cwd=perm_dir, check=True)
-
-                        temp_bbl_path = os.path.join(perm_dir, 'testbib.bbl')
-                        if os.path.exists(temp_bbl_path):
-                            # Read and display the generated .bbl file
-                            with open(temp_bbl_path, 'r') as f:
-                                bbl_content = f.read()
-                            st.subheader('Generated .bbl File:')
-                            st.code(bbl_content, language='')
-                        else:
-                            st.error("The .bbl file was not generated.")
+                        st.subheader('Generated .bbl Content:')
+                        st.markdown(f"```\n{bbl_content}\n```")
                     except subprocess.CalledProcessError as e:
-                        st.error(f"An error occurred during LaTeX compilation:\n{e}")
-
-# Call the function to generate the page
-generate_bbl_page()
+                        st.error(f"An error occurred while running commands:\n{e}")
+                else:
+                    st.warning("Please paste BibTeX content before generating the .bbl file.")

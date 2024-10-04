@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+\providecommand{\urlprefix}{}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{yang2023anti}
+Yang, G., Liu, X., and Li, B., Anti-money laundering supervision by intelligent
+  algorithm, \emph{Comput. Security}  (2023) 103344.
+
+\bibitem{yang2024uncover}
+Yang, S., Chen, J., Huang, M., Zheng, Z., and Huang, Y., Uncover the
+  premeditated attacks: Detecting exploitable reentrancy vulnerabilities by
+  identifying attacker contracts, in \emph{2024 IEEE/ACM 46th Int. Conf. Softw.
+  Eng. (ICSE)} (2024), pp. 912--912.
+
+\end{thebibliography}

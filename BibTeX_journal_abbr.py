@@ -26,7 +26,7 @@ def estimate_token_count(text):
     return len(text.split())
 
 # Function to trim the conversation to avoid exceeding token limits
-def trim_conversation(conversation, max_tokens=4000):
+def trim_conversation(conversation, max_tokens=15000):
     total_tokens = sum([estimate_token_count(msg['content']) for msg in conversation])
     trimmed_conversation = conversation[:]
 
@@ -35,7 +35,7 @@ def trim_conversation(conversation, max_tokens=4000):
     return trimmed_conversation
 
 # Function to split a large input into smaller chunks based on a delimiter
-def split_large_input(input_text, delimiter="\n", max_tokens=3000):
+def split_large_input(input_text, delimiter="\n", max_tokens=14000):
     input_parts = input_text.split(delimiter)
     chunks = []
     current_chunk = []
@@ -56,11 +56,9 @@ def split_large_input(input_text, delimiter="\n", max_tokens=3000):
         chunks.append(delimiter.join(current_chunk))
 
     return chunks
-
 # Function to keep only the last 5 messages in chat history
-def keep_last_n_messages(history, n=20):
+def keep_last_n_messages(history, n=5):
     return history[-n:]
-
 def main_page_with_abbr():
     st.title('🚀 ACES BibTeX with Journal Abbreviation')
 
@@ -77,7 +75,7 @@ def main_page_with_abbr():
 
     # Button to delete all history except the last 5 chats
     if st.button("Delete All History Except Last 5"):
-        st.session_state.chat_history_abbr = keep_last_n_messages(st.session_state.chat_history_abbr, 20)
+        st.session_state.chat_history_abbr = keep_last_n_messages(st.session_state.chat_history_abbr, 5)
         save_history_to_file(st.session_state.chat_history_abbr, history_file)
         st.success("Chat history trimmed to the last 5 messages.")
 
@@ -95,14 +93,14 @@ def main_page_with_abbr():
         st.session_state.chat_history_abbr.append({"role": "user", "content": user_prompt})
 
         # Split the input using a newline as the delimiter
-        input_chunks = split_large_input(user_prompt, delimiter="\n", max_tokens=3000)
+        input_chunks = split_large_input(user_prompt, delimiter="\n", max_tokens=14000)
 
         for chunk in input_chunks:
             # Add chunk to the conversation and display it
             st.session_state.chat_history_abbr.append({"role": "user", "content": chunk})
 
             # Trim conversation history to stay within token limits
-            st.session_state.chat_history_abbr = trim_conversation(st.session_state.chat_history_abbr, max_tokens=4000)
+            st.session_state.chat_history_abbr = trim_conversation(st.session_state.chat_history_abbr, max_tokens=15000)
 
         # Send user's message to GPT-3.5-turbo and get a streamed response
         setup_openai()

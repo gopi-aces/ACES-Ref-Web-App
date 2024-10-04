@@ -17,45 +17,58 @@ def generate_bbl_page():
             selected_bst = st.selectbox('Choose a .bst file', bst_files)
 
             st.subheader('Paste your BibTeX content below:')
-            bib_content = st_ace(language='latex', theme='github', height=200)
+            bib_content = st_ace(language='latex', theme='github', height=500)
 
             if st.button('Generate .bbl'):
                 if bib_content:
-                    with open('temp.bib', 'w') as f:
+                    # Save BibTeX content to a file using UTF-8 encoding
+                    with open('temp.bib', 'w', encoding='utf-8') as f:
                         f.write(bib_content)
 
+                    # LaTeX document content
                     tex_content = f"""
                     \\documentclass{{article}}
-
                     \\usepackage{{cite}}
-
+                    \\usepackage{{hyperref}}
+                    \\usepackage[utf8]{{inputenc}}
+	                \\usepackage[T1]{{fontenc}}
+	                \\usepackage{{amsmath,amssymb,amsfonts}}
                     \\begin{{document}}
-
-                    pdflatex testbib.tex
-
                     \\cite{{*}}
                     \\bibliographystyle{{bst/{selected_bst}}}
                     \\bibliography{{temp}}
-
                     \\end{{document}}
                     """
 
-                    with open('testbib.tex', 'w') as tex_file:
+                    # Save the .tex file using UTF-8 encoding
+                    with open('testbib.tex', 'w', encoding='utf-8') as tex_file:
                         tex_file.write(tex_content)
 
+                    # Commands to compile LaTeX and BibTeX
                     pdflatex_command = ['pdflatex', 'testbib']
                     bibtex_command = ['bibtex', 'testbib']
 
                     try:
+                        # Run LaTeX and BibTeX commands
                         subprocess.run(pdflatex_command, check=True)
                         subprocess.run(bibtex_command, check=True)
+                        subprocess.run(pdflatex_command, check=True)  # Run again for references
 
-                        with open('testbib.bbl', 'r') as bbl_file:
+                        # Read the generated .bbl file using UTF-8 encoding
+                        with open('testbib.bbl', 'r', encoding='utf-8') as bbl_file:
                             bbl_content = bbl_file.read()
 
                         st.subheader('Generated .bbl Content:')
                         st.markdown(f"```\n{bbl_content}\n```")
                     except subprocess.CalledProcessError as e:
+                        # Show detailed error if LaTeX or BibTeX fails
+                        with open('testbib.blg', 'r', encoding='utf-8') as log_file:
+                            log_content = log_file.read()
                         st.error(f"An error occurred while running commands:\n{e}")
+                        st.text("BibTeX Log Output:")
+                        st.code(log_content)
                 else:
-                    st.warning("Please paste BibTeX content before generating the .bbl file.")
+                    st.warning("Please provide BibTeX content before generating the .bbl file.")
+
+# Call the function to generate the page
+generate_bbl_page()

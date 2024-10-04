@@ -1,4 +1,3 @@
-# main_page.py
 import streamlit as st
 import openai
 import json
@@ -27,21 +26,23 @@ def load_history_from_file(file_name):
 
 # Estimate token count (average approx: 1 word = 1.33 tokens)
 def estimate_token_count(text):
-    return len(text.split())
+    return len(text.split())  # Rough token estimate
 
 
-# Function to trim the conversation to avoid exceeding token limits
-def trim_conversation(conversation, max_tokens=4000):
+# Function to trim conversation to fit within token limits
+def trim_conversation(conversation, max_tokens=15000):
     total_tokens = sum([estimate_token_count(msg['content']) for msg in conversation])
     trimmed_conversation = conversation[:]
 
+    # Remove the oldest messages until within the token limit
     while total_tokens > max_tokens and len(trimmed_conversation) > 1:
         total_tokens -= estimate_token_count(trimmed_conversation.pop(0)['content'])
+
     return trimmed_conversation
 
 
-# Function to split a large input into smaller chunks based on a delimiter
-def split_large_input(input_text, delimiter="\n", max_tokens=3000):
+# Function to split large input into smaller chunks
+def split_large_input(input_text, delimiter="\n", max_tokens=14000):
     input_parts = input_text.split(delimiter)
     chunks = []
     current_chunk = []
@@ -57,15 +58,15 @@ def split_large_input(input_text, delimiter="\n", max_tokens=3000):
             current_chunk = [part]
             current_token_count = part_token_count
 
-    # Add any remaining parts as the last chunk
+    # Add any remaining parts
     if current_chunk:
         chunks.append(delimiter.join(current_chunk))
 
     return chunks
 
 
-# Function to keep only the last 5 messages in chat history
-def keep_last_n_messages(history, n=20):
+# Keep only the last n messages
+def keep_last_n_messages(history, n=5):
     return history[-n:]
 
 
@@ -83,9 +84,9 @@ def main_page():
     if "chat_history_main" not in st.session_state:
         st.session_state.chat_history_main = load_history_from_file(history_file)
 
-    # Button to delete all but the last 5 messages
+    # Button to delete all but the last n messages
     if st.button("Delete All History Except Last 5"):
-        st.session_state.chat_history_main = keep_last_n_messages(st.session_state.chat_history_main, 20)
+        st.session_state.chat_history_main = keep_last_n_messages(st.session_state.chat_history_main, 5)
         save_history_to_file(st.session_state.chat_history_main, history_file)
         st.success("Chat history trimmed to the last 5 messages.")
 
@@ -103,18 +104,21 @@ def main_page():
         st.session_state.chat_history_main.append({"role": "user", "content": user_prompt})
 
         # Split the input using a newline as the delimiter
-        input_chunks = split_large_input(user_prompt, delimiter="\n", max_tokens=3000)
+        input_chunks = split_large_input(user_prompt, delimiter="\n", max_tokens=14000)
 
         for chunk in input_chunks:
             # Add chunk to the conversation and display it
             st.session_state.chat_history_main.append({"role": "user", "content": chunk})
 
             # Trim conversation history to stay within token limits
-            st.session_state.chat_history_main = trim_conversation(st.session_state.chat_history_main, max_tokens=4000)
+            st.session_state.chat_history_main = trim_conversation(st.session_state.chat_history_main, max_tokens=15000)
 
             # Streamed output logic
             setup_openai()
             try:
+                # Trim history again before sending to API to avoid hitting token limits
+                trimmed_history = trim_conversation(st.session_state.chat_history_main, max_tokens=15000)
+
                 with st.chat_message("assistant"):
                     assistant_message_placeholder = st.empty()
                     assistant_response_stream = ""
@@ -124,7 +128,7 @@ def main_page():
                         messages=[
                             {"role": "system",
                              "content": "You are an assistant trained to convert academic references into BibTeX format."},
-                            *st.session_state.chat_history_main
+                            *trimmed_history  # Use the trimmed conversation
                         ],
                         stream=True  # Stream the output
                     )

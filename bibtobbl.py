@@ -44,25 +44,15 @@ def generate_bbl_page():
                     with open('testbib.tex', 'w', encoding='utf-8') as tex_file:
                         tex_file.write(tex_content)
 
-                    # Docker command to run MiKTeX
-                    docker_command = [
-                        'docker', 'run', '--rm',
-                        '-v', f"{os.getcwd()}:/miktex/work",
-                        'miktex/miktex',
-                        'pdflatex', 'testbib'
-                    ]
-                    bibtex_command = [
-                        'docker', 'run', '--rm',
-                        '-v', f"{os.getcwd()}:/miktex/work",
-                        'miktex/miktex',
-                        'bibtex', 'testbib'
-                    ]
+                    # Commands to compile LaTeX and BibTeX
+                    pdflatex_command = ['pdflatex', 'testbib']
+                    bibtex_command = ['bibtex', 'testbib']
 
                     try:
-                        # Run pdflatex and bibtex commands inside Docker
-                        subprocess.run(docker_command, check=True)
+                        # Run LaTeX and BibTeX commands
+                        subprocess.run(pdflatex_command, check=True)
                         subprocess.run(bibtex_command, check=True)
-                        subprocess.run(docker_command, check=True)  # Run again for references
+                        subprocess.run(pdflatex_command, check=True)  # Run again for references
 
                         # Read the generated .bbl file using UTF-8 encoding
                         with open('testbib.bbl', 'r', encoding='utf-8') as bbl_file:

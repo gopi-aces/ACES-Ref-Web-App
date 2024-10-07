@@ -1,18 +1,26 @@
-\begin{thebibliography}{1}
-\providecommand{\urlprefix}{}
+\begin{thebibliography}{4}
+\newcommand{\enquote}[1]{#1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem{yang2023anti}
-Yang, G., Liu, X., and Li, B., Anti-money laundering supervision by intelligent
-  algorithm, \emph{Comput. Security}  (2023) 103344.
+\bibitem[{\AmS(2004)}]{ams04}
+\AmS, (2004). \emph{\AmS-\LaTeX{} Version 2 User's Guide}, American
+  Mathematical Society: Providence, \url{http://www.ams.org/tex/amslatex.html}.
 
-\bibitem{yang2024uncover}
-Yang, S., Chen, J., Huang, M., Zheng, Z., and Huang, Y., Uncover the
-  premeditated attacks: Detecting exploitable reentrancy vulnerabilities by
-  identifying attacker contracts, in \emph{2024 IEEE/ACM 46th Int. Conf. Softw.
-  Eng. (ICSE)} (2024), pp. 912--912.
+\bibitem[{Jarlskog(1988)}]{jarl88}
+Jarlskog, C (1988). \emph{CP {V}iolation}, World Scientific: Singapore.
+
+\bibitem[{Lamport(1987)}]{lamp87}
+Lamport, L (1987). \emph{Make Index: An Index Processor For LaTeX},
+  \url{http://www.tug.org/tex-archive/indexing/makeindex/doc/makeindex.dvi}.
+
+\bibitem[{Lamport(1994)}]{lamp94}
+Lamport, L (1994). \emph{\LaTeX, A Document Preparation\q System}, 2nd ed.,
+  Addison-Wesley: Reading, MA.
 
 \end{thebibliography}

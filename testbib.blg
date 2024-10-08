@@ -1,53 +1,53 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: /miktex/work/testbib.aux
-Reallocating 'name_of_file' (item size: 1) to 17 items.
-The style file: bst/ws-apjor.bst.bst
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+The style file: bst/JAANumber.bst.bst
 Reallocating 'name_of_file' (item size: 1) to 5 items.
 Database file #1: temp.bib
-<ws-apjor.bst>
-World Scientific's Bibliography Style File for APJOR
-version 1.0 (2019/05/14), Sorted
-for support: Rajesh, rajesh@wspc.com
-Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+<ws-ijac.bst>
+World Scientific's Bibliography Style File for IJAC
+version 1.0 (26-3-2004)
+-- by Rajesh <rajesh@wspc.com.sg>
+<Sorted version, follows inhouse BiB pattern 2>
 You've used 2 entries,
-            3300 wiz_defined-function locations,
-            698 strings with 5391 characters,
-and the built_in function-call counts, 1145 in all, are:
-= -- 104
-> -- 32
-< -- 3
-+ -- 14
-- -- 9
-* -- 74
-:= -- 170
-add.period$ -- 4
+            2842 wiz_defined-function locations,
+            663 strings with 5221 characters,
+and the built_in function-call counts, 967 in all, are:
+= -- 110
+> -- 14
+< -- 2
++ -- 7
+- -- 4
+* -- 71
+:= -- 126
+add.period$ -- 2
 call.type$ -- 2
-change.case$ -- 14
-chr.to.int$ -- 2
+change.case$ -- 8
+chr.to.int$ -- 0
 cite$ -- 2
-duplicate$ -- 88
-empty$ -- 82
-format.name$ -- 15
-if$ -- 232
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 16
-newline$ -- 16
-num.names$ -- 8
-pop$ -- 32
+duplicate$ -- 46
+empty$ -- 77
+format.name$ -- 4
+if$ -- 226
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 9
+num.names$ -- 4
+pop$ -- 5
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 6
 quote$ -- 0
-skip$ -- 46
+skip$ -- 53
 stack$ -- 0
-substring$ -- 60
-swap$ -- 44
-text.length$ -- 1
+substring$ -- 97
+swap$ -- 30
+text.length$ -- 2
 text.prefix$ -- 0
-top$ -- 4
+top$ -- 5
 type$ -- 18
 warning$ -- 0
 while$ -- 9
-width$ -- 0
-write$ -- 30
+width$ -- 3
+write$ -- 20

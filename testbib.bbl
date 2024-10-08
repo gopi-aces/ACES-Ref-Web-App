@@ -1,20 +1,12 @@
-\begin{thebibliography}{2}
-\newcommand{\enquote}[1]{#1}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\providecommand{\urlprefix}{URL }
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{1}
 
-\bibitem[{Chen(2009)}]{Che}
-Chen, Q (2009). \enquote{Personal communication (email) with j. h. przytycki,}
-  April 3.
+\bibitem{cahn}
+P.~Cahn, A generalization of turaev's virtual string cobracket and
+  self-intersections of virtual strings, {\em Commun. Contemp. Math.} {\bf
+  19}(4)  (2017)  1650053, 37pp.
 
-\bibitem[{Chen and Przytycki(2008)}]{Ch-P2}
-Chen, Q and JH~Przytycki (2008). \enquote{The gram matrix of the temperley-lieb
-  algebra is similar to the matrix of chromatic joins,} \emph{Communications in
-  Contemporary Mathematics (CCM)} 10,  849--855.
+\bibitem{Carter}
+J.~S. Carter, Classifying immersed curves, {\em Proc. Amer. Math. Soc.} {\bf
+  111}(1)  (1991)  281--287.
 
 \end{thebibliography}

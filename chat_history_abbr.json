@@ -42,5 +42,29 @@
     {
         "role": "assistant",
         "content": "```bibtex\n@article{cahn,\n  author = {Cahn, Patricia},\n  title = {A Generalization of Turaev's Virtual String Cobracket and Self-Intersections of Virtual Strings},\n  journal = {Commun. Contemp. Math.},\n  volume = {19},\n  number = {4},\n  pages = {1650053, 37pp},\n  year = {2017}\n}\n\n@article{Carter,\n  author = {Carter, J. Scott},\n  title = {Classifying Immersed Curves},\n  journal = {Proc. Amer. Math. Soc.},\n  volume = {111},\n  number = {1},\n  pages = {281--287},\n  year = {1991}\n}\n\n@thesis{chen-thesis,\n  author = {Chen, Jie},\n  title = {Flat Knots and Invariants},\n  year = {2023},\n  note = {\\url{http://hdl.handle.net/11375/29201}},\n  school = {McMaster University},\n  pages = {105}\n}\n\n@article{Carter-Kamada-Saito,\n  author = {Carter, J. Scott and Kamada, Seiki and Saito, Masahico},\n  title = {Stable Equivalence of Knots on Surfaces and Virtual Knot Cobordisms},\n  journal = {J. Knot Theory Ramifications},\n  volume = {11},\n  number = {3},\n  pages = {311--322},\n  year = {2002}\n}\n```"
+    },
+    {
+        "role": "user",
+        "content": "\\bib{cahn}{article}{ author={Cahn, Patricia}, title={A generalization of Turaev's virtual string cobracket and self-intersections of virtual strings}, journal={Commun. Contemp. Math.}, volume={19}, date={2017}, number={4}, pages={1650053, 37pp}, }\n\n\\bib{Carter}{article}{ AUTHOR = {Carter, J. Scott}, TITLE = {Classifying immersed curves}, JOURNAL = {Proc. Amer. Math. Soc.}, VOLUME = {111}, YEAR = {1991}, NUMBER = {1}, PAGES = {281--287}, }"
+    },
+    {
+        "role": "user",
+        "content": "\\bib{cahn}{article}{ author={Cahn, Patricia}, title={A generalization of Turaev's virtual string cobracket and self-intersections of virtual strings}, journal={Commun. Contemp. Math.}, volume={19}, date={2017}, number={4}, pages={1650053, 37pp}, }\n\n\\bib{Carter}{article}{ AUTHOR = {Carter, J. Scott}, TITLE = {Classifying immersed curves}, JOURNAL = {Proc. Amer. Math. Soc.}, VOLUME = {111}, YEAR = {1991}, NUMBER = {1}, PAGES = {281--287}, }"
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@article{cahn,\n  author = {Cahn, Patricia},\n  title = {A generalization of Turaev's virtual string cobracket and self-intersections of virtual strings},\n  journal = {Commun. Contemp. Math.},\n  volume = {19},\n  number = {4},\n  pages = {1650053, 37pp},\n  year = {2017}\n}\n\n@article{Carter,\n  author = {Carter, J. Scott},\n  title = {Classifying immersed curves},\n  journal = {Proc. Amer. Math. Soc.},\n  volume = {111},\n  number = {1},\n  pages = {281--287},\n  year = {1991}\n}\n```"
+    },
+    {
+        "role": "user",
+        "content": "\\bibitem[{Zhang and Lu(2021)}]{zhang2021openacc}\nZhang, Y. and Lu, X. [2021] \\enquote{Openacc parallel schemes for accelerating\n  asteroidal period search,} in \\emph{2021 International Conference on\n  Space-Air-Ground Computing (SAGC)} (IEEE), pp. 70--76.\n\n\\bibitem[{Zhang \\emph{et~al.}(2023)Zhang, Lu, Guo and Li}]{zhang2023fast}\nZhang, Y.-X., Lu, X.-P., Guo, T. and Li, X.-R. [2023] \\enquote{Fast asteroidal\n  period inversion by parallel acceleration-based three-step reduced voting,}\n  \\emph{Advances in Space Research} \\textbf{71}(8),  3479--3498."
+    },
+    {
+        "role": "user",
+        "content": "\\bibitem[{Zhang and Lu(2021)}]{zhang2021openacc}\nZhang, Y. and Lu, X. [2021] \\enquote{Openacc parallel schemes for accelerating\n  asteroidal period search,} in \\emph{2021 International Conference on\n  Space-Air-Ground Computing (SAGC)} (IEEE), pp. 70--76.\n\n\\bibitem[{Zhang \\emph{et~al.}(2023)Zhang, Lu, Guo and Li}]{zhang2023fast}\nZhang, Y.-X., Lu, X.-P., Guo, T. and Li, X.-R. [2023] \\enquote{Fast asteroidal\n  period inversion by parallel acceleration-based three-step reduced voting,}\n  \\emph{Advances in Space Research} \\textbf{71}(8),  3479--3498."
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@inproceedings{zhang2021openacc,\n  author = {Zhang, Y. and Lu, X.},\n  title = {OpenACC Parallel Schemes for Accelerating Asteroidal Period Search},\n  booktitle = {2021 International Conference on Space-Air-Ground Computing (SAGC)},\n  year = {2021},\n  organization = {IEEE},\n  pages = {70--76}\n}\n\n@article{zhang2023fast,\n  author = {Zhang, Y.-X. and Lu, X.-P. and Guo, T. and Li, X.-R.},\n  title = {Fast Asteroidal Period Inversion by Parallel Acceleration-Based Three-Step Reduced Voting},\n  journal = {Adv. Space Res.},\n  volume = {71},\n  number = {8},\n  pages = {3479--3498},\n  year = {2023}\n}\n```"
     }
 ]

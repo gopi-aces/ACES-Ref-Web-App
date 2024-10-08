@@ -42,5 +42,17 @@
     {
         "role": "assistant",
         "content": "```bibtex\n@article{BIMP1,\n  title={A generalization of the Gram determinant of type $A$},\n  author={Bakshi, R. P. and Ibarra, D. and Mukherjee, S. and Przytycki, J. H.},\n  journal={Topology Appl.},\n  volume={295},\n  pages={107663},\n  year={2021}\n}\n\n@article{BIMP2,\n  title={A Note on the Gram Determinant of Type Mb},\n  author={Bakshi, R. P. and Ibarra, D. and Mukherjee, S. and Przytycki, J. H.},\n  journal={AMS Contemporary Mathematics (to appear)},\n  note={Paper No. 107663}\n}\n\n@article{Cai,\n  title={A Gram determinant of Lickorish's bilinear form},\n  author={Cai, X.},\n  journal={Math. Proc. Cambridge Philos. Soc.},\n  volume={151},\n  number={1},\n  pages={83--94},\n  year={2011}\n}\n\n@misc{Che,\n  author={Chen, Q.},\n  title={Personal communication (email) with J. H. Przytycki},\n  year={2009},\n  note={April 3}\n}\n\n@article{Ch-P2,\n  author={Chen, Q. and Przytycki, J. H.},\n  title={The Gram matrix of the Temperley-Lieb algebra is similar to the matrix of chromatic joins},\n  journal={Communications in Contemporary Mathematics (CCM)},\n  volume={10},\n  year={2008},\n  pages={849--855}\n}\n\n@article{CP,\n  author={Chen, Q. and Przytycki, J. H.},\n  title={The Gram determinant of the type $B$ Temperley-Lieb algebra},\n  journal={Advances in Applied Mathematics},\n  volume={43},\n  number={2},\n  year={2009},\n  pages={156--161}\n}\n\n@article{DiF,\n  author={Di Francesco, P.},\n  title={Meander determinants},\n  journal={Comm. Math. Phys.},\n  volume={191},\n  number={3},\n  year={1998},\n  pages={543--583}\n}\n```"
+    },
+    {
+        "role": "user",
+        "content": "\\bibitem[{Zhang and Lu(2021)}]{zhang2021openacc}\nZhang, Y. and Lu, X. [2021] \\enquote{Openacc parallel schemes for accelerating\n  asteroidal period search,} in \\emph{2021 International Conference on\n  Space-Air-Ground Computing (SAGC)} (IEEE), pp. 70--76.\n\n\\bibitem[{Zhang \\emph{et~al.}(2023)Zhang, Lu, Guo and Li}]{zhang2023fast}\nZhang, Y.-X., Lu, X.-P., Guo, T. and Li, X.-R. [2023] \\enquote{Fast asteroidal\n  period inversion by parallel acceleration-based three-step reduced voting,}\n  \\emph{Advances in Space Research} \\textbf{71}(8),  3479--3498."
+    },
+    {
+        "role": "user",
+        "content": "\\bibitem[{Zhang and Lu(2021)}]{zhang2021openacc}\nZhang, Y. and Lu, X. [2021] \\enquote{Openacc parallel schemes for accelerating\n  asteroidal period search,} in \\emph{2021 International Conference on\n  Space-Air-Ground Computing (SAGC)} (IEEE), pp. 70--76.\n\n\\bibitem[{Zhang \\emph{et~al.}(2023)Zhang, Lu, Guo and Li}]{zhang2023fast}\nZhang, Y.-X., Lu, X.-P., Guo, T. and Li, X.-R. [2023] \\enquote{Fast asteroidal\n  period inversion by parallel acceleration-based three-step reduced voting,}\n  \\emph{Advances in Space Research} \\textbf{71}(8),  3479--3498."
+    },
+    {
+        "role": "assistant",
+        "content": "```bibtex\n@inproceedings{zhang2021openacc,\n  title={Openacc parallel schemes for accelerating asteroidal period search},\n  author={Zhang, Y. and Lu, X.},\n  booktitle={2021 International Conference on Space-Air-Ground Computing (SAGC)},\n  year={2021},\n  organization={IEEE},\n  pages={70--76}\n}\n\n@article{zhang2023fast,\n  title={Fast asteroidal period inversion by parallel acceleration-based three-step reduced voting},\n  author={Zhang, Y.-X. and Lu, X.-P. and Guo, T. and Li, X.-R.},\n  journal={Advances in Space Research},\n  volume={71},\n  number={8},\n  year={2023},\n  pages={3479--3498}\n}\n```"
     }
 ]

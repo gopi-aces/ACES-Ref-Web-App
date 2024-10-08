@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2024.10.7)  7 OCT 2024 15:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2024.10.7)  8 OCT 2024 04:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -290,36 +290,16 @@ Package hyperref Info: Link coloring OFF on input line 8.
 \openout3 = `testbib.out'.
 
  (testbib.bbl
-LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (/root/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (/root/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-3.
-
-(/root/.miktex/texmfs/install/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-Underfull \hbox (badness 2310) in paragraph at lines 19--21
-[]\T1/cmr/m/n/10 Lamport, L (1987). \T1/cmr/m/it/10 Make In-dex: An In-dex Pro-
-ces-sor
- []
-
-
-Underfull \hbox (badness 5893) in paragraph at lines 19--21
-\T1/cmr/m/it/10 For La-TeX\T1/cmr/m/n/10 , []$\T1/cmtt/m/n/10 http : / / www . 
-tug . org / tex-[]archive / indexing / makeindex /
- []
-
-)
+))
 
 [1
 
@@ -336,22 +316,21 @@ Package rerunfilecheck Info: File `testbib.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9205 strings out of 475816
- 138204 string characters out of 5778351
- 522220 words of memory out of 5000000
- 31747 multiletter control sequences out of 15000+600000
- 563760 words of font info for 50 fonts, out of 8000000 for 9000
+ 9160 strings out of 475816
+ 137358 string characters out of 5778351
+ 518768 words of memory out of 5000000
+ 31708 multiletter control sequences out of 15000+600000
+ 563536 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,5n,79p,293b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </root/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk> <
-/root/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti0700.pk> </roo
-t/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk> </root/.m
-iktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk> </root/.mikte
-x/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk></root/.miktex/tex
-mfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on testbib.pdf (1 page, 51621 bytes).
+ </root/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk> <
+/root/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk> </roo
+t/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk> </root/.m
+iktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk></root/.miktex
+/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+Output written on testbib.pdf (1 page, 37336 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
+ 112 PDF objects out of 1000 (max. 8388607)
+ 5 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

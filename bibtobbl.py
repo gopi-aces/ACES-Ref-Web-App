@@ -6,16 +6,28 @@ from streamlit_ace import st_ace
 def generate_bbl_page():
     st.title('BibTeX to BBL Converter (Docker Edition)')
 
-    # Define the filenames for logs to be deleted
+    # Define filenames used for logs and auxiliary files
+    tex_file = 'testbib.tex'
     log_file = 'testbib.log'
     aux_file = 'testbib.aux'
+    bbl_file = 'testbib.bbl'
+    bib_file = 'temp.bib'
+    blg_file = 'testbib.blg'
 
-    # Add a button to clear only the log and aux files
-    if st.button('Clear .log and .aux Files'):
-        for file in [log_file, aux_file]:
-            if os.path.exists(file):
-                os.remove(file)
-        st.success("Log (.log) and auxiliary (.aux) files have been deleted successfully!")
+    # Docker-specific paths for accessing files inside the container
+    container_work_dir = '/miktex/work/'
+
+    # Add a button to clear only the log and aux files from the miktex-container
+    if st.button('Clear .log and .aux Files in miktex-container'):
+        clear_command = [
+            'docker', 'exec', 'miktex-container',
+            'sh', '-c', f'rm -f {container_work_dir}{log_file} {container_work_dir}{aux_file}'
+        ]
+        try:
+            subprocess.run(clear_command, check=True)
+            st.success(".log and .aux files have been deleted successfully from miktex-container!")
+        except subprocess.CalledProcessError as e:
+            st.error(f"Failed to delete .log and .aux files from miktex-container:\n{e}")
 
     # Display the main interface for BibTeX to BBL conversion
     bst_folder = 'bst'
@@ -33,13 +45,6 @@ def generate_bbl_page():
 
             if st.button('Generate .bbl'):
                 if bib_content:
-                    # Set up file paths
-                    current_dir = "/mnt/d/Python/2023/11-Nov/ACES-Ref-Web-App"
-                    bib_file = 'temp.bib'
-                    tex_file = 'testbib.tex'
-                    bbl_file = 'testbib.bbl'
-                    blg_file = 'testbib.blg'
-
                     # Save BibTeX content to a .bib file using UTF-8 encoding
                     with open(bib_file, 'w', encoding='utf-8') as f:
                         f.write(bib_content)
@@ -63,43 +68,53 @@ def generate_bbl_page():
                     with open(tex_file, 'w', encoding='utf-8') as tex_file_obj:
                         tex_file_obj.write(tex_content)
 
-                    # Docker commands for pdflatex and bibtex
+                    # Docker commands for LaTeX and BibTeX execution
                     docker_pdflatex_command = [
-                        'docker', 'exec',
-                        'miktex-container',  # Use the container name
-                        'pdflatex', '/miktex/work/testbib.tex'
+                        'docker', 'exec', 'miktex-container',
+                        'pdflatex', f'{container_work_dir}{tex_file}'
                     ]
 
                     docker_bibtex_command = [
-                        'docker', 'exec',
-                        'miktex-container',
-                        'bibtex', f"/miktex/work/testbib"
+                        'docker', 'exec', 'miktex-container',
+                        'bibtex', f'{container_work_dir}{tex_file[:-4]}'  # Remove .tex extension for BibTeX
                     ]
 
+                    def run_command(command, description):
+                        """Run a Docker command inside the miktex-container and show real-time output."""
+                        st.info(f"Running: {description}")
+                        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+                        for line in process.stdout:
+                            st.text(line.strip())
+                        process.wait()
+                        return process.returncode
+
                     try:
-                        # Run Docker commands for LaTeX and BibTeX
-                        subprocess.run(docker_pdflatex_command, check=True)
-                        subprocess.run(docker_bibtex_command, check=True)
+                        # Run pdflatex -> bibtex -> pdflatex for complete compilation
+                        if run_command(docker_pdflatex_command, "pdflatex (1st pass)") != 0:
+                            #st.error("First pass of pdflatex failed. Check the logs for details.")
+                            return
+
+                        if run_command(docker_bibtex_command, "bibtex") != 0:
+                            #st.error("BibTeX command failed. Check the logs for details.")
+                            return
+
 
                         # Read and display the generated .bbl content
-                        with open(bbl_file, 'r', encoding='utf-8') as bbl_file_obj:
-                            bbl_content = bbl_file_obj.read()
+                        if os.path.exists(bbl_file):
+                            with open(bbl_file, 'r', encoding='utf-8') as bbl_file_obj:
+                                bbl_content = bbl_file_obj.read()
+                            st.subheader('Generated .bbl Content:')
+                            st.markdown(f"```\n{bbl_content}\n```")
+                        else:
+                            st.error("The .bbl file was not generated. Please check the logs for errors.")
 
-                        st.subheader('Generated .bbl Content:')
-                        st.markdown(f"```\n{bbl_content}\n```")
                     except subprocess.CalledProcessError as e:
                         st.error(f"An error occurred while running Docker LaTeX commands:\n{e}")
                         # Show the LaTeX and BibTeX logs if they exist
-                        if os.path.exists(log_file):
-                            with open(log_file, 'r', encoding='utf-8') as tex_log_file:
-                                st.text("LaTeX Log Output:")
-                                st.code(tex_log_file.read())
-                        if os.path.exists(blg_file):
-                            with open(blg_file, 'r', encoding='utf-8') as bib_log_file:
-                                st.text("BibTeX Log Output:")
-                                st.code(bib_log_file.read())
+                        #display_log_files(container_work_dir, log_file, blg_file)
                 else:
                     st.warning("Please provide BibTeX content before generating the .bbl file.")
+
 
 # Call the function to generate the page
 generate_bbl_page()

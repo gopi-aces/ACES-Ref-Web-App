@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{2}
 \newcommand{\enquote}[1]{#1}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -8,19 +8,13 @@
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem[{\AmS(2004)}]{ams04}
-\AmS, (2004). \emph{\AmS-\LaTeX{} Version 2 User's Guide}, American
-  Mathematical Society: Providence, \url{http://www.ams.org/tex/amslatex.html}.
+\bibitem[{Chen(2009)}]{Che}
+Chen, Q (2009). \enquote{Personal communication (email) with j. h. przytycki,}
+  April 3.
 
-\bibitem[{Jarlskog(1988)}]{jarl88}
-Jarlskog, C (1988). \emph{CP {V}iolation}, World Scientific: Singapore.
-
-\bibitem[{Lamport(1987)}]{lamp87}
-Lamport, L (1987). \emph{Make Index: An Index Processor For LaTeX},
-  \url{http://www.tug.org/tex-archive/indexing/makeindex/doc/makeindex.dvi}.
-
-\bibitem[{Lamport(1994)}]{lamp94}
-Lamport, L (1994). \emph{\LaTeX, A Document Preparation\q System}, 2nd ed.,
-  Addison-Wesley: Reading, MA.
+\bibitem[{Chen and Przytycki(2008)}]{Ch-P2}
+Chen, Q and JH~Przytycki (2008). \enquote{The gram matrix of the temperley-lieb
+  algebra is similar to the matrix of chromatic joins,} \emph{Communications in
+  Contemporary Mathematics (CCM)} 10,  849--855.
 
 \end{thebibliography}

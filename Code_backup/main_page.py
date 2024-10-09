@@ -1,4 +1,3 @@
-#main_page.py
 import streamlit as st
 import openai
 import json

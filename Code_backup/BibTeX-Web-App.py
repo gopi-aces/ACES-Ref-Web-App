@@ -14,8 +14,10 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Sidebar navigation
 st.sidebar.title("🚦Navigation")
-page = st.sidebar.radio("Go to", ["💥BibTeX without Journal Abbr"])
+page = st.sidebar.radio("Go to", ["🌏BibTeX without Journal Abbr", "💥BibTeX with Journal Abbr"])
 
 # Navigation logic
-if page == "💥BibTeX without Journal Abbr":
+if page == "🌏BibTeX without Journal Abbr":
+    main_page.main_page()
+elif page == "💥BibTeX with Journal Abbr":
     BibTeX_journal_abbr.main_page_with_abbr()

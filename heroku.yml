@@ -1,6 +1,0 @@
-build:
-  docker:
-    web: Dockerfile
-
-run:
-  web: streamlit run BibTeX-Web-App.py --server.port=$PORT --server.address=0.0.0.0

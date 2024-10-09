@@ -74,7 +74,7 @@ def keep_first_message(history):
     return [SYSTEM_MESSAGE] if len(history) > 1 else history  # Keep only the first message
 
 def main_page_with_abbr():
-    st.title('🚀 ACES BibTeX with Journal Abbreviation')
+    st.title('🚀 References')
 
     # Load settings
     settings = load_settings()

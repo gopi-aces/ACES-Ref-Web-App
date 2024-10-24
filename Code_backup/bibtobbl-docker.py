@@ -71,7 +71,7 @@ def generate_bbl_page():
                     # Docker commands for LaTeX and BibTeX execution
                     docker_pdflatex_command = [
                         'docker', 'exec', 'miktex-container',
-                        'pdflatex', f'{container_work_dir}{tex_file}'
+                        'latex', f'{container_work_dir}{tex_file}'
                     ]
 
                     docker_bibtex_command = [

@@ -35,7 +35,7 @@ def generate_bbl_page():
     if not os.path.exists(bst_folder):
         st.error(f"Folder '{bst_folder}' not found. Please create the folder and add .bst files.")
     else:
-        bst_files = [f for f in os.listdir(bst_folder) if f.endswith('.bst')]
+        bst_files = [f[:-4] for f in os.listdir(bst_folder) if f.endswith('.bst')]
         if not bst_files:
             st.error("No .bst files found in the 'bst' folder.")
         else:

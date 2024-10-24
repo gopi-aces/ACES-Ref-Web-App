@@ -1,12 +1,18 @@
 \begin{thebibliography}{1}
+\providecommand{\urlprefix}{}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
 
-\bibitem{cahn}
-P.~Cahn, A generalization of turaev's virtual string cobracket and
-  self-intersections of virtual strings, {\em Commun. Contemp. Math.} {\bf
-  19}(4)  (2017)  1650053, 37pp.
+\bibitem{2020}
+Zhang, Y.~L., Zhang, Z.~L., and Zhou, S.~L., Reduction for primitive
+  flag-transitive symmetric $2$-$(v,k,\lambda)$ designs with $\lambda$ prime,
+  \emph{Discrete Math.} \textbf{343} (2020) 111843.
 
-\bibitem{Carter}
-J.~S. Carter, Classifying immersed curves, {\em Proc. Amer. Math. Soc.} {\bf
-  111}(1)  (1991)  281--287.
+\bibitem{rank}
+Zhou, S.~L. and Zhan, X.~Q., Flag-transitive automorphism groups of $2$-designs
+  with $\lambda\ge (r,\lambda)^2$ and an application to symmetric designs,
+  \emph{Ars Math. Contemp.} \textbf{14} (2018) 187--195.
 
 \end{thebibliography}

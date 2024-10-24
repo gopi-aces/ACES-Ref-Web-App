@@ -1,53 +1,52 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: /miktex/work/testbib.aux
-Reallocating 'name_of_file' (item size: 1) to 18 items.
-The style file: bst/JAANumber.bst.bst
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+The style file: bst/ws-acs.bst.bst
 Reallocating 'name_of_file' (item size: 1) to 5 items.
 Database file #1: temp.bib
-<ws-ijac.bst>
-World Scientific's Bibliography Style File for IJAC
-version 1.0 (26-3-2004)
--- by Rajesh <rajesh@wspc.com.sg>
-<Sorted version, follows inhouse BiB pattern 2>
+<ws-acs.bst>
+World Scientific's Bibliography Style File for ACS
+version 1.0 (2005/03/26), Sorted
+for email support: Rajesh, rajesh@wspc.com.sg
 You've used 2 entries,
-            2842 wiz_defined-function locations,
-            663 strings with 5221 characters,
-and the built_in function-call counts, 967 in all, are:
-= -- 110
-> -- 14
-< -- 2
-+ -- 7
-- -- 4
-* -- 71
-:= -- 126
+            2950 wiz_defined-function locations,
+            1116 strings with 10166 characters,
+and the built_in function-call counts, 821 in all, are:
+= -- 57
+> -- 31
+< -- 0
++ -- 12
+- -- 10
+* -- 67
+:= -- 117
 add.period$ -- 2
 call.type$ -- 2
-change.case$ -- 8
+change.case$ -- 11
 chr.to.int$ -- 0
 cite$ -- 2
-duplicate$ -- 46
-empty$ -- 77
-format.name$ -- 4
-if$ -- 226
+duplicate$ -- 62
+empty$ -- 65
+format.name$ -- 12
+if$ -- 155
 int.to.chr$ -- 0
 int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 9
+missing$ -- 17
+newline$ -- 13
 num.names$ -- 4
-pop$ -- 5
+pop$ -- 20
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 9
 quote$ -- 0
-skip$ -- 53
+skip$ -- 11
 stack$ -- 0
-substring$ -- 97
-swap$ -- 30
-text.length$ -- 2
+substring$ -- 53
+swap$ -- 42
+text.length$ -- 0
 text.prefix$ -- 0
-top$ -- 5
-type$ -- 18
+top$ -- 4
+type$ -- 8
 warning$ -- 0
-while$ -- 9
+while$ -- 7
 width$ -- 3
-write$ -- 20
+write$ -- 22

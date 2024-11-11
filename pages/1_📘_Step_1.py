@@ -6,6 +6,17 @@ import os
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from utils import load_settings  # Import shared functions
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+
+
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 # System message for context
 SYSTEM_MESSAGE = {
     "role": "system",

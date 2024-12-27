@@ -1,21 +1,14 @@
-# Use the official Python base image
-FROM python:3.9-slim
+# Use the official MiKTeX image
+FROM miktex/miktex:essential
 
-# Set the working directory in the container
-WORKDIR /app
+# Install necessary LaTeX packages (optional)
+RUN miktexsetup finish && mpm --admin --install=amsmath,hyperref
 
-# Copy the requirements.txt into the container
-COPY requirements.txt .
+# Set up working directory in the container
+WORKDIR /miktex/work
 
-# Install the required Python packages
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the Streamlit app code into the container
-COPY . .
-
-# Expose the port that Streamlit uses
+# Expose the application port (if required)
 EXPOSE 8501
 
-# Run the Streamlit app
-CMD ["streamlit", "run", "ACES_Home_Page.py", "--server.port=8080", "--server.headless=true"]
-
+# Set the default command to run a shell
+CMD ["/bin/bash"]
